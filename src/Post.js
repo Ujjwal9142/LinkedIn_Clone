@@ -5,6 +5,7 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import InputOption from "./InputOption";
 
 const Post = forwardRef(({ name, description, message, photoURL }, ref) => {
@@ -23,7 +24,12 @@ const Post = forwardRef(({ name, description, message, photoURL }, ref) => {
       </div>
 
       <div className="post__buttons">
-        <InputOption Icon={ThumbUpAltOutlinedIcon} title="Like" color="gray" />
+        <InputOption
+          Icon={ThumbUpAltOutlinedIcon}
+          title="Like"
+          color="gray"
+          AltIcon={ThumbUpAltIcon}
+        />
         <InputOption Icon={ChatOutlinedIcon} title="Comment" color="gray" />
         <InputOption Icon={ShareOutlinedIcon} title="Share" color="gray" />
         <InputOption Icon={SendOutlinedIcon} title="Send" color="gray" />

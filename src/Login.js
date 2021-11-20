@@ -8,6 +8,7 @@ import {
 import "./Login.css";
 import { useDispatch } from "react-redux";
 import { login } from "./features/userSlice.js";
+import Linkedin from "../src/assets/LoginLinkedin.png";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -19,6 +20,14 @@ const Login = () => {
   const register = () => {
     if (name === "") {
       alert("Name is required to Register");
+      return;
+    }
+    if (email === "") {
+      alert("Email field is empty!");
+      return;
+    }
+    if (password === "") {
+      alert("Password field is empty!");
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
@@ -37,11 +46,19 @@ const Login = () => {
           );
         });
       })
-      .catch((error) => alert(error));
+      .catch((error) => alert(error.message));
   };
 
   const loginToApp = (e) => {
     e.preventDefault();
+    if (email === "") {
+      alert("Email field is empty!");
+      return;
+    }
+    if (password === "") {
+      alert("Password field is empty!");
+      return;
+    }
     signInWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
         dispatch(
@@ -54,16 +71,13 @@ const Login = () => {
         );
       })
       .catch((error) => {
-        alert(error);
+        alert(error.message);
       });
   };
 
   return (
     <div className="login">
-      <img
-        src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent-png-16.png"
-        alt="LinkedIn"
-      />
+      <img src={Linkedin} alt="LinkedIn" />
       <form>
         <input
           type="text"

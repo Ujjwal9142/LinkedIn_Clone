@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 import { logout } from "./features/userSlice";
 import { auth } from "./firebase";
 import { signOut } from "@firebase/auth";
+import Linkedin from "../src/assets/HeaderLinkedIn.png";
+import Exit from "../src/assets/Exit.png";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,10 +24,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__left">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-          alt="LinkedIn"
-        />
+        <img src={Linkedin} alt="LinkedIn" />
         <div className="header__search">
           <SearchIcon />
           <input type="text" placeholder="Search" />
@@ -38,11 +37,7 @@ const Header = () => {
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <HeaderOption avatar={true} title="Me" />
-        <HeaderOption
-          exit="https://www.clipartmax.com/png/middle/141-1411375_logout-free-icon-3-switch.png"
-          title="Logout"
-          logout={logoutOfApp}
-        />
+        <HeaderOption exit={Exit} title="Logout" logout={logoutOfApp} />
       </div>
     </div>
   );

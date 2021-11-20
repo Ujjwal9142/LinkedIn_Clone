@@ -2,6 +2,7 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
+import Tokyo from "../src/assets/tokyo.jpg";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -18,10 +19,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <img
-          src="https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt="Desert"
-        />
+        <img src={Tokyo} alt="" />
         <Avatar className="sidebar__avatar" src={user.photoURL}>
           {user.email[0]}
         </Avatar>
